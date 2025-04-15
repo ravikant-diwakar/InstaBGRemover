@@ -11,6 +11,6 @@ def view_gallery():
     if images:
         for image_file in images:
             image = Image.open(os.path.join(gallery_path, image_file))
-            st.image(image, caption=image_file, use_column_width=True)
+            st.image(image, caption=image_file, use_container_width=True)
     else:
         st.write('No images in the gallery.')
