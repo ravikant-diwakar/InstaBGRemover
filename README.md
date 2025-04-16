@@ -3,6 +3,20 @@
 <p align="center"><strong>⭐️ Help us grow by giving a star! ⭐️</strong></p>
 
 
+<p align="center">
+  <a href="https://github.com/ravikant-diwakar/InstaBGRemover/stargazers">
+    <img src="https://img.shields.io/github/stars/your-username/your-repo-name?style=social" alt="Star on GitHub">
+  </a>
+  <a href="https://github.com/ravikant-diwakar/InstaBGRemover/fork">
+    <img src="https://img.shields.io/github/forks/your-username/your-repo-name?style=social" alt="Fork on GitHub">
+  </a>
+  <a href="https://github.com/ravikant-diwakar/InstaBGRemover">
+    <img src="https://img.shields.io/badge/View%20on-GitHub-181717?logo=github" alt="View on GitHub">
+  </a>
+</p>
+
+
+
 InstaBGRemover is an open-source Streamlit web application that lets users remove image backgrounds instantly using AI. It also includes features like image editing (crop, resize, rotate, flip), user authentication, and an image gallery to manage your uploads. Users can remove backgrounds **without logging in**, while additional features are available after sign-up.
 
 > ✨ Ideal for designers, content creators, developers, and anyone who wants a fast and privacy-friendly background remover tool — all running locally or deployable to the cloud.
