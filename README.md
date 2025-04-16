@@ -2,7 +2,8 @@
 
 <p align="center"><strong>⭐️ Help us grow by giving a star! ⭐️</strong></p>
 
-<p align="center"> InstaBGRemover is an open-source Streamlit web application that lets users remove image backgrounds instantly using AI. It also includes features like image editing (crop, resize, rotate, flip), user authentication, and an image gallery to manage your uploads. Users can remove backgrounds **without logging in**, while additional features are available after sign-up. </p>
+
+InstaBGRemover is an open-source Streamlit web application that lets users remove image backgrounds instantly using AI. It also includes features like image editing (crop, resize, rotate, flip), user authentication, and an image gallery to manage your uploads. Users can remove backgrounds **without logging in**, while additional features are available after sign-up.
 
 > ✨ Ideal for designers, content creators, developers, and anyone who wants a fast and privacy-friendly background remover tool — all running locally or deployable to the cloud.
 
