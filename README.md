@@ -1,16 +1,22 @@
+![20250416_115503](https://github.com/user-attachments/assets/0fb7af9d-3cc4-44c4-8bad-245749b51f9e)
 
-# InstaBGRemover
+---
 
 InstaBGRemover is an open-source Streamlit web application that lets users remove image backgrounds instantly using AI. It also includes features like image editing (crop, resize, rotate, flip), user authentication, and an image gallery to manage your uploads. Users can remove backgrounds **without logging in**, while additional features are available after sign-up.
 
+> ✨ Ideal for designers, content creators, developers, and anyone who wants a fast and privacy-friendly background remover tool — all running locally or deployable to the cloud.
+
 ## 🚀 Features
 
-- ✅ **Background Removal** (No sign-in required)
-- 🔐 **User Authentication** (Login/Sign-Up for extra features)
-- 🛠️ **Image Editing** (Crop, Resize, Rotate, Flip)
-- 🖼️ **Personal Image Gallery**
-- 📥 **Download Processed Images**
-- 🎨 Clean and responsive UI with custom CSS
+| Feature                  | Description |
+|--------------------------|-------------|
+| 🧼 **Remove Background** | Upload an image and remove its background instantly using AI-powered tools. |
+| ✍️ **Edit Image**        | Crop, resize, rotate, and flip images — all within a smooth UI. |
+| 🖼️ **Personal Gallery** | View, manage, and reuse your edited images in your private gallery. |
+| 🔐 **Authentication**    | Sign up and log in to access editing tools and save image history. |
+| 💾 **Download Images**  | Easily download the processed images with one click. |
+| 🎨 **Custom Styling**    | Stylish and responsive UI with custom CSS support. |
+| 📂 **Offline & Online** | Runs locally or can be deployed to cloud platforms like Streamlit Cloud, Heroku, or AWS. |
 
 ## 📸 Demo
 
@@ -39,7 +45,7 @@ InstaBGRemover/
 ├── requirements.txt        # Python dependencies
 ├── README.md               # Project documentation
 └── assets/
-    └── styles.css          # Custom styles
+    └── styles/             # Custom styles
 ```
 
 ---
@@ -51,8 +57,12 @@ InstaBGRemover/
 Clone the repo and install dependencies:
 
 ```bash
-git clone https://github.com/your-username/InstaBGRemover.git
+git clone https://github.com/ravikant-diwakar/InstaBGRemover.git
+```
+```
 cd InstaBGRemover
+```
+```
 pip install -r requirements.txt
 ```
 
@@ -68,7 +78,29 @@ pip install streamlit rembg Pillow onnxruntime
 streamlit run app.py
 ```
 
+## 🧪 Upcoming Advanced Features (Contributions Welcome!)
+
+- [ ] **Drag and Drop Upload UI**
+- [ ] **Auto Save to User-Specific Folders**
+- [ ] **Blur & Brightness Adjustments**
+- [ ] **Multiple Image Upload & Batch Processing**
+- [ ] **Dark Mode Toggle**
+- [ ] **Google/GitHub OAuth Integration**
+- [ ] **Export to PDF/ZIP for Batch Downloads**
+- [ ] **Cloud Storage Support (AWS S3, Firebase, etc.)**
+- [ ] **Mobile Optimization Enhancements**
+
 ---
+
+## 👤 User Roles & Access
+
+| Feature              | Guest (No Login) | Logged-in User |
+|----------------------|------------------|-----------------|
+| Remove Background    | ✅               | ✅              |
+| Image Editing Tools  | ❌               | ✅              |
+| View Gallery         | ❌               | ✅              |
+| Download Image       | ✅               | ✅              |
+
 
 ## 🔐 Usage
 
@@ -118,6 +150,8 @@ See the [LICENSE](LICENSE) file for more details.
 
 ## 📬 Contact
 
-Have a question or suggestion? Feel free to open an [issue](https://github.com/your-username/InstaBGRemover/issues) or reach out via [email](mailto:youremail@example.com).
+Have a question or suggestion? Feel free to open an [issue](https://github.com/ravikant-diwakar/InstaBGRemover/issues) or reach out via [email](mailto:youremail@example.com).
 
 ---
+
+
