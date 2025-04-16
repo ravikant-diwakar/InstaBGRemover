@@ -21,6 +21,10 @@ InstaBGRemover is an open-source Streamlit web application that lets users remov
 ## 📸 Demo
  https://github.com/user-attachments/assets/b4128acf-3bf7-44ac-834b-a04eea630b7c 
 
+## Screenshots
+| InstaBGRemover |
+| -------------- }
+| ![White Blue Simple Modern Enhancing Sales Strategy Presentation](https://github.com/user-attachments/assets/c9c2b411-3b8a-4673-ab48-cb54a4bc05ee) |
 
 ## 🛠️ Tech Stack
 
