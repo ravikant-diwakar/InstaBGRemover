@@ -19,10 +19,10 @@ InstaBGRemover is an open-source Streamlit web application that lets users remov
 | 📂 **Offline & Online** | Runs locally or can be deployed to cloud platforms like Streamlit Cloud, Heroku, or AWS. |
 
 ## 📸 Demo
+| BGRemover |
+| --------- |
+| https://github.com/user-attachments/assets/b4128acf-3bf7-44ac-834b-a04eea630b7c |
 
-<p align="center">
-  <img src="https://your-demo-gif-or-screenshot-url.gif" alt="InstaBGRemover Demo" width="600"/>
-</p>
 
 ## 🛠️ Tech Stack
 
