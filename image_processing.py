@@ -1,54 +1,51 @@
 import streamlit as st
 from rembg import remove
 from PIL import Image, ImageOps
-import io
 
-def remove_background():
-    st.header('Remove Background')
-    uploaded_file = st.file_uploader('Upload an image', type=['png', 'jpg', 'jpeg'])
-    if uploaded_file is not None:
-        image = Image.open(uploaded_file)
-        st.image(image, caption='Original Image', use_container_width=True)
-        with st.spinner('Removing background...'):
-            output_image = remove(image)
-        st.image(output_image, caption='Processed Image', use_container_width=True)
-        buf = io.BytesIO()
-        output_image.save(buf, format='PNG')
-        byte_im = buf.getvalue()
-        st.download_button(
-            label="Download Processed Image",
-            data=byte_im,
-            file_name="processed_image.png",
-            mime="image/png"
-        )
+def remove_bg_ui():
+    uploaded_file = st.file_uploader("Upload an Image", type=["png", "jpg", "jpeg"])
+    if uploaded_file:
+        image = Image.open(uploaded_file).convert("RGB")
+        output = remove(image)
+        st.image(output, caption="Image without background", use_column_width=True)
+        st.download_button("Download", data=output.tobytes(), file_name="no_bg.png")
 
-def edit_image():
-    st.header('Edit Image')
-    uploaded_file = st.file_uploader('Upload an image', type=['png', 'jpg', 'jpeg'])
-    if uploaded_file is not None:
+def edit_image_ui():
+    uploaded_file = st.file_uploader("Upload an Image to Edit", type=["png", "jpg", "jpeg"], key="edit")
+    if uploaded_file:
         image = Image.open(uploaded_file)
-        st.image(image, caption='Original Image', use_container_width=True)
-        edit_option = st.selectbox('Choose an edit option', ['Crop', 'Resize', 'Rotate', 'Flip'])
-        if edit_option == 'Crop':
-            left = st.slider('Left', 0, image.width, 0)
-            top = st.slider('Top', 0, image.height, 0)
-            right = st.slider('Right', 0, image.width, image.width)
-            bottom = st.slider('Bottom', 0, image.height, image.height)
-            cropped_image = image.crop((left, top, right, bottom))
-            st.image(cropped_image, caption='Cropped Image', use_container_width=True)
-        elif edit_option == 'Resize':
-            width = st.slider('Width', 1, image.width, image.width)
-            height = st.slider('Height', 1, image.height, image.height)
-            resized_image = image.resize((width, height))
-            st.image(resized_image, caption='Resized Image', use_container_width=True)
-        elif edit_option == 'Rotate':
-            angle = st.slider('Angle', 0, 360, 0)
-            rotated_image = image.rotate(angle)
-            st.image(rotated_image, caption='Rotated Image', use_container_width=True)
-        elif edit_option == 'Flip':
-            flip_option = st.selectbox('Flip Option', ['Horizontal', 'Vertical'])
-            if flip_option == 'Horizontal':
-                flipped_image = ImageOps.mirror(image)
-            else:
-                flipped_image = ImageOps.flip(image)
-            st.image(flipped_image, caption='Flipped Image', use_container_width=True)
+
+        st.image(image, caption="Original", use_column_width=True)
+
+        option = st.selectbox("Edit Option", ["Crop", "Rotate", "Flip", "Resize"])
+
+        if option == "Crop":
+            left = st.number_input("Left", 0, image.width)
+            top = st.number_input("Top", 0, image.height)
+            right = st.number_input("Right", left, image.width)
+            bottom = st.number_input("Bottom", top, image.height)
+            if st.button("Apply Crop"):
+                cropped = image.crop((left, top, right, bottom))
+                st.image(cropped, caption="Cropped Image", use_column_width=True)
+
+        elif option == "Rotate":
+            angle = st.slider("Rotate Angle", -180, 180)
+            if st.button("Rotate"):
+                rotated = image.rotate(angle)
+                st.image(rotated, caption="Rotated Image", use_column_width=True)
+
+        elif option == "Flip":
+            flip = st.radio("Flip Mode", ["Horizontal", "Vertical"])
+            if st.button("Flip"):
+                if flip == "Horizontal":
+                    flipped = ImageOps.mirror(image)
+                else:
+                    flipped = ImageOps.flip(image)
+                st.image(flipped, caption="Flipped Image", use_column_width=True)
+
+        elif option == "Resize":
+            width = st.number_input("Width", 1, 1000, value=image.width)
+            height = st.number_input("Height", 1, 1000, value=image.height)
+            if st.button("Resize"):
+                resized = image.resize((int(width), int(height)))
+                st.image(resized, caption="Resized Image", use_column_width=True)
